@@ -26,6 +26,8 @@ body {
 
 .catboy-img img {
   max-width: 500px;
+  box-shadow: 0px 0px 9px 3px #747474;
+  border-radius: 10px;
 }
 
 .catboy-details {
