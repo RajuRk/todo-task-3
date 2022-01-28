@@ -8,39 +8,34 @@ async function starter() {
 // starter();
 
 async function displayData() {
-  const dataList = await starter();
+  const catboy = await starter();
   document.getElementById("catboy").innerHTML = `
-    ${dataList.map((catboy) => {
-      return `
                <div class="catbay-img">
                    <div class="catboy-img">
                      <img src="${catboy.url}" alt="" />
                    </div>
                    <div class="catboy-details">
-                       <table>
+                       <table class="table table-striped">
                            <tr>
-                           <th>category:</th>
-                           <td></td>
+                           <th scope="col">Category:</th>
+                           <td>${catboy.category}</td>
                            </tr>
                            <tr>
-                           <th>artist:</th>
-                           <td></td>
+                           <th scope="col">Artist:</th>
+                           <td>${catboy.artist}</td>
                            </tr>
                            <tr>
-                           <th>artist_url:</th>
-                           <td></td>
+                           <th scope="col">Artist Link:</th>
+                           <td><a href="${catboy.artist_url}" target="_blank">${catboy.artist_url}</a></td>
                            </tr>
                            <tr>
-                           <th>source_url:</th>
-                           <td></td>
+                           <th scope="col">Source Link:</th>
+                           <td><a href="${catboy.source_url}" target="_blank">${catboy.source_url}</a></td>
                            </tr>
                        </table>
                    </div>
                </div>
             `;
-    })}
-  
-  `;
 }
 
 displayData();
